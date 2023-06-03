@@ -7,8 +7,10 @@ import {
   InputBase,
   Badge,
   Avatar,
+  Menu,
+  MenuItem,
 } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import PetsIcon from "@mui/icons-material/Pets";
 import Pets from "@mui/icons-material/Pets";
 import { Mail } from "@mui/icons-material";
@@ -45,6 +47,7 @@ const UserBox = styled(Box)(({ theme }) => ({
 }));
 
 export const Navbar = () => {
+  const [open, setOpen] = useState(false);
   return (
     <AppBar position="sticky">
       <StyledToolbar>
@@ -65,9 +68,10 @@ export const Navbar = () => {
           <Avatar
             sx={{ width: 30, height: 30 }}
             src="https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes-thumbnail.png"
+            onClick={(e) => setOpen(true)}
           />
         </Icons>
-        <UserBox>
+        <UserBox onClick={(e) => setOpen(true)}>
           <Avatar
             sx={{ width: 30, height: 30 }}
             src="https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes-thumbnail.png"
@@ -75,6 +79,24 @@ export const Navbar = () => {
           <Typography variant="span">John</Typography>
         </UserBox>
       </StyledToolbar>
+      <Menu
+        id="demo-positioned-menu"
+        aria-labelledby="demo-positioned-button"
+        open={open}
+        onClose={(e) => setOpen(false)}
+        anchorOrigin={{
+          vertical: "top",
+          horizontal: "right",
+        }}
+        transformOrigin={{
+          vertical: "top",
+          horizontal: "left",
+        }}
+      >
+        <MenuItem>Profile</MenuItem>
+        <MenuItem>My account</MenuItem>
+        <MenuItem>Logout</MenuItem>
+      </Menu>
     </AppBar>
   );
 };
