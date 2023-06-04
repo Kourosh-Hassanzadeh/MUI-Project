@@ -8,8 +8,17 @@ import {
   Avatar,
   TextField,
   Stack,
+  ButtonGroup,
+  Button,
 } from "@mui/material";
-import { Add as AddIcon, EmojiEmotions, Image, PersonAdd, VideoCameraBack } from "@mui/icons-material";
+import {
+  Add as AddIcon,
+  DateRange,
+  EmojiEmotions,
+  Image,
+  PersonAdd,
+  VideoCameraBack,
+} from "@mui/icons-material";
 import React, { useState } from "react";
 import { grey } from "@mui/material/colors";
 
@@ -49,7 +58,14 @@ export const Add = () => {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box width={400} height={280} bgcolor="white" p={3} borderRadius={5}>
+        <Box
+          width={400}
+          height={280}
+          bgcolor={"background.default"}
+          color={"text.primary"}
+          p={3}
+          borderRadius={5}
+        >
           <Typography variant="h6" color={grey} textAlign="center">
             Create Post
           </Typography>
@@ -71,12 +87,21 @@ export const Add = () => {
             variant="standard"
           />
           <Stack direction="row" gap={1} mt={2} mb={3}>
-            <EmojiEmotions color="primary"/>
-            <Image color="secondary"/>
-            <VideoCameraBack color="success"/>
-            <PersonAdd color="error"/>
-
+            <EmojiEmotions color="primary" />
+            <Image color="secondary" />
+            <VideoCameraBack color="success" />
+            <PersonAdd color="error" />
           </Stack>
+          <ButtonGroup
+            fullWidth
+            variant="contained"
+            aria-label="outlined primary button group"
+          >
+            <Button>Post</Button>
+            <Button sx={{ width: "100px" }}>
+              <DateRange />
+            </Button>
+          </ButtonGroup>
         </Box>
       </StyledModal>
     </>
