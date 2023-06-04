@@ -6,25 +6,28 @@ import {
   Toolbar,
   Typography,
 } from "@mui/material";
-import { Add, Settings } from "@mui/icons-material";
+import { Settings } from "@mui/icons-material";
 import { Sidebar } from "./components/Sidebar";
 import { Feed } from "./components/Feed";
 import { Rightbar } from "./components/Rightbar";
 import { Box, Stack } from "@mui/material";
 import { Navbar } from "./components/Navbar";
+import { Add } from "./components/Add";
+
+
 function App() {
-  const BlueButton = styled(Button)(({ theme }) => ({
-    backgroundColor: "skyblue",
-    color: "#888",
-    margin: 5,
-    "&:hover": {
-      backgroundColor: "lightblue",
-    },
-    "&:disabled": {
-      backgroundColor: "gray",
-      color: "white",
-    },
-  }));
+  // const BlueButton = styled(Button)(({ theme }) => ({
+  //   backgroundColor: "skyblue",
+  //   color: "#888",
+  //   margin: 5,
+  //   "&:hover": {
+  //     backgroundColor: "lightblue",
+  //   },
+  //   "&:disabled": {
+  //     backgroundColor: "gray",
+  //     color: "white",
+  //   },
+  // }));
 
   return (
     <Box>
@@ -34,6 +37,7 @@ function App() {
         <Feed />
         <Rightbar />
       </Stack>
+      <Add/>
     </Box>
   );
 }
