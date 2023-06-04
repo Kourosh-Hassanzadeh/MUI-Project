@@ -1,11 +1,17 @@
-import { Avatar, AvatarGroup, Typography } from "@mui/material";
+import {
+  Avatar,
+  AvatarGroup,
+  ImageList,
+  ImageListItem,
+  Typography,
+} from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
 
 export const Rightbar = () => {
   return (
     <Box flex={2} sx={{ display: { xs: "none", sm: "block" } }} p={2}>
-      <Box position={"fixed"}>
+      <Box position={"fixed"} width={300}>
         <Typography variant="h6" fontWeight={100}>
           Online Friends
         </Typography>
@@ -37,6 +43,29 @@ export const Rightbar = () => {
           <Avatar alt="amirreza alasti" />
           <Avatar alt="hesam ghasemi" />
         </AvatarGroup>
+        <Typography variant="h6" fontWeight={100} mt={2} mb={2}>
+          Latest Photos
+        </Typography>
+        <ImageList cols={3} rowHeight={100} gap={5}>
+          <ImageListItem>
+            <img
+              src="https://material-ui.com/static/images/image-list/breakfast.jpg"
+              alt=""
+            />
+          </ImageListItem>
+          <ImageListItem>
+            <img
+              src="https://material-ui.com/static/images/image-list/burgers.jpg"
+              alt=""
+            />
+          </ImageListItem>
+          <ImageListItem>
+            <img
+              src="https://material-ui.com/static/images/image-list/camera.jpg"
+              alt=""
+            />
+          </ImageListItem>
+        </ImageList>
       </Box>
     </Box>
   );
